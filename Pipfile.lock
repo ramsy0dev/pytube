@@ -401,11 +401,11 @@
         },
         "flake8-plugin-utils": {
             "hashes": [
-                "sha256:1fe43e3e9acf3a7c0f6b88f5338cad37044d2f156c43cb6b080b5f9da8a76f06",
-                "sha256:20fa2a8ca2decac50116edb42e6af0a1253ef639ad79941249b840531889c65a"
+                "sha256:39f6f338d038b301c6fd344b06f2e81e382b68fa03c0560dff0d9b1791a11a2c",
+                "sha256:e4848c57d9d50f19100c2d75fa794b72df068666a9041b4b0409be923356a3ed"
             ],
             "markers": "python_version >= '3.6' and python_version < '4.0'",
-            "version": "==1.3.2"
+            "version": "==1.3.3"
         },
         "flake8-polyfill": {
             "hashes": [
@@ -447,11 +447,12 @@
         },
         "flake8-return": {
             "hashes": [
-                "sha256:183d0ad2f8553cb2c63c0cf288eb799d967577a74639599525adcd3860f6bb12",
-                "sha256:d646d3b010a9736ddc23c24f98ad3282999f575da45d6eb9cefe4adddb44062d"
+                "sha256:1f07af12954ed03ebe2c2aac2418f78b55374e9929d4956109664588f31582a1",
+                "sha256:68dfa56582cd704febd02ad86dcf5df67e38e0836d62f1ceae7930d76d3dd955"
             ],
             "index": "pypi",
-            "version": "==1.1.2"
+            "markers": "python_version >= '3.6' and python_version < '4.0'",
+            "version": "==1.2.0"
         },
         "flake8-strict": {
             "hashes": [
