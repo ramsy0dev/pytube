@@ -1,18 +1,15 @@
 dev:
-	pipenv install --dev
+	poetry isntall
 
-pipenv:
-	pip install pipenv
-	pipenv install --dev
+poetry:
+	pip install poetry
+	poetry install
 
 deploy-patch: clean requirements bumpversion-patch upload clean
 
 deploy-minor: clean requirements bumpversion-minor upload clean
 
 deploy-major: clean requirements bumpversion-major upload clean
-
-requirements:
-	pipenv_to_requirements
 
 bumpversion-patch:
 	bumpversion patch
@@ -30,7 +27,7 @@ bumpversion-major:
 	git push --tags
 
 upload:
-	python setup.py sdist bdist_wheel
+	poetry build
 	twine upload dist/*
 
 help:
@@ -40,11 +37,11 @@ help:
 	@echo "install - install the package to the active Python's site-packages"
 
 ci:
-	pip install pipenv
-	pipenv install --dev --skip-lock
-	pipenv run flake8
+	pip install poetry
+	poetry install
+	poetry run flake8
 	# pipenv run pytest --cov-report term-missing # --cov=humps
-	pipenv run coverage run -m pytest
+	poetry run coverage run -m pytest
 
 clean: clean-build clean-pyc
 
@@ -63,4 +60,4 @@ clean-pyc:
 	find . -name '__pycache__' -exec rm -fr {} +
 
 install: clean
-	python setup.py install
+	pip install -e .
