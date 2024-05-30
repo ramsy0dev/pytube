@@ -1,21 +1,39 @@
 """This module contains all non-cipher related data extraction logic."""
+import re
 import logging
 import urllib.parse
-import re
+
 from collections import OrderedDict
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple
-from urllib.parse import parse_qs, quote, urlencode, urlparse
+from typing import (
+    Any,
+    Dict,
+    List,
+    Optional,
+    Tuple
+)
+from urllib.parse import (
+    parse_qs,
+    quote,
+    urlencode,
+    urlparse
+)
 
 from pytube.cipher import Cipher
-from pytube.exceptions import HTMLParseError, LiveStreamError, RegexMatchError
+from pytube.exceptions import (
+    HTMLParseError,
+    LiveStreamError,
+    RegexMatchError
+)
+
 from pytube.helpers import regex_search
 from pytube.metadata import YouTubeMetadata
-from pytube.parser import parse_for_object, parse_for_all_objects
-
+from pytube.parser import (
+    parse_for_object,
+    parse_for_all_objects
+)
 
 logger = logging.getLogger(__name__)
-
 
 def publish_date(watch_html: str):
     """Extract publish date
@@ -89,7 +107,7 @@ def is_age_restricted(watch_html: str) -> bool:
     return True
 
 
-def playability_status(watch_html: str) -> (str, str):
+def playability_status(watch_html: str) -> tuple[str, str]:
     """Return the playability status and status explanation of a video.
 
     For example, a video may have a status of LOGIN_REQUIRED, and an explanation
@@ -130,7 +148,8 @@ def video_id(url: str) -> str:
     :returns:
         YouTube video id.
     """
-    return regex_search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", url, group=1)
+    return url.split("=")[-1]
+    # return regex_search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", url, group=1)
 
 
 def playlist_id(url: str) -> str:

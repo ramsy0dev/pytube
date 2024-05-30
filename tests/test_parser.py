@@ -4,7 +4,6 @@ import pytest
 from pytube.exceptions import HTMLParseError
 from pytube.parser import parse_for_object
 
-
 def test_invalid_start():
     with pytest.raises(HTMLParseError):
         parse_for_object('test = {}', r'invalid_regex')

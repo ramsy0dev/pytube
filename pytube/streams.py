@@ -6,22 +6,32 @@ combined). This was referred to as ``Video`` in the legacy pytube version, but
 has been renamed to accommodate DASH (which serves the audio and video
 separately).
 """
-import logging
 import os
-from math import ceil
+import logging
 
+from math import ceil
 from datetime import datetime
-from typing import BinaryIO, Dict, Optional, Tuple
+from typing import (
+    BinaryIO,
+    Dict,
+    Optional,
+    Tuple
+)
 from urllib.error import HTTPError
 from urllib.parse import parse_qs
 
-from pytube import extract, request
-from pytube.helpers import safe_filename, target_directory
+from pytube import (
+    extract,
+    request
+)
+from pytube.helpers import (
+    safe_filename,
+    target_directory
+)
 from pytube.itags import get_format_profile
 from pytube.monostate import Monostate
 
 logger = logging.getLogger(__name__)
-
 
 class Stream:
     """Container for stream manifest data."""

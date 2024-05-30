@@ -1,11 +1,11 @@
 """Unit tests for the :module:`extract <extract>` module."""
-from datetime import datetime
-import pytest
 import re
 
+from datetime import datetime
+
+import pytest
 from pytube import extract
 from pytube.exceptions import RegexMatchError
-
 
 def test_extract_video_id():
     url = "https://www.youtube.com/watch?v=2lAe1cqCOXo"

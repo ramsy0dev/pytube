@@ -1,12 +1,12 @@
 """Reusable dependency injected testing components."""
-import gzip
-import json
 import os
-import pytest
+import json
+import gzip
+
 from unittest import mock
 
+import pytest
 from pytube import YouTube
-
 
 def load_playback_file(filename):
     """Load a gzip json playback file."""

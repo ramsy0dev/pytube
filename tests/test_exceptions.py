@@ -1,9 +1,9 @@
-import pytest
 from unittest import mock
 
+import pytest
 import pytube.exceptions as exceptions
-from pytube import YouTube
 
+from pytube import YouTube
 
 def test_video_unavailable():
     try:

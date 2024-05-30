@@ -1,20 +1,32 @@
 #!/usr/bin/env python3
 """A simple command line application to download youtube videos."""
-import argparse
-import gzip
-import json
-import logging
 import os
-import shutil
 import sys
-import datetime as dt
+import json
+import gzip
+import shutil
+import logging
+import argparse
 import subprocess  # nosec
-from typing import List, Optional
-
+import datetime as dt
 import pytube.exceptions as exceptions
+
+from typing import (
+    List,
+    Optional
+)
+
 from pytube import __version__
-from pytube import CaptionQuery, Playlist, Stream, YouTube
-from pytube.helpers import safe_filename, setup_logger
+from pytube import (
+    CaptionQuery,
+    Playlist,
+    Stream,
+    YouTube
+)
+from pytube.helpers import (
+    safe_filename,
+    setup_logger
+)
 
 
 logger = logging.getLogger(__name__)
@@ -50,6 +62,7 @@ def main():
     else:
         print("Loading video...")
         youtube = YouTube(args.url)
+        
         _perform_args_on_youtube(youtube, args)
 
 
@@ -186,7 +199,7 @@ def build_playback_report(youtube: YouTube) -> None:
     :param YouTube youtube:
         A YouTube object.
     """
-    ts = int(dt.datetime.utcnow().timestamp())
+    ts = int(dt.datetime.now(dt.UTC).timestamp())
     fp = os.path.join(os.getcwd(), f"yt-video-{youtube.video_id}-{ts}.json.gz")
 
     js = youtube.js

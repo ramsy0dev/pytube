@@ -1,10 +1,18 @@
 import os
-import pytest
+
 from unittest import mock
-from unittest.mock import MagicMock, mock_open, patch
+from unittest.mock import (
+    MagicMock,
+    mock_open,
+    patch
+)
 
-from pytube import Caption, CaptionQuery, captions
-
+import pytest
+from pytube import (
+    Caption,
+    CaptionQuery,
+    captions
+)
 
 def test_float_to_srt_time_format():
     caption1 = Caption(

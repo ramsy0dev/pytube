@@ -1,14 +1,20 @@
-import math
 import os
-import time
 import json
+import math
+import time
 import xml.etree.ElementTree as ElementTree
+
 from html import unescape
-from typing import Dict, Optional
+from typing import (
+    Dict,
+    Optional
+)
 
 from pytube import request
-from pytube.helpers import safe_filename, target_directory
-
+from pytube.helpers import (
+    safe_filename,
+    target_directory
+)
 
 class Caption:
     """Container for caption tracks."""

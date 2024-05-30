@@ -1,10 +1,21 @@
 """This module provides a query interface for media streams and captions."""
-from collections.abc import Mapping, Sequence
-from typing import Callable, List, Optional, Union
+from typing import (
+    Callable,
+    List,
+    Optional,
+    Union
+)
 
-from pytube import Caption, Stream
+from collections.abc import (
+    Mapping,
+    Sequence
+)
+
+from pytube import (
+    Caption,
+    Stream
+)
 from pytube.helpers import deprecated
-
 
 class StreamQuery(Sequence):
     """Interface for querying the available media streams."""

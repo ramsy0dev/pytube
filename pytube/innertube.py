@@ -4,14 +4,13 @@ This module is NOT intended to be used directly by end users, as each of the
 interfaces returns raw results. These should instead be parsed to extract
 the useful information for the end user.
 """
-# Native python imports
-import json
 import os
-import pathlib
+import json
 import time
+import pathlib
+
 from urllib import parse
 
-# Local imports
 from pytube import request
 
 # YouTube on TV client secrets
@@ -216,7 +215,6 @@ _default_clients = {
 _token_timeout = 1800
 _cache_dir = pathlib.Path(__file__).parent.resolve() / '__cache__'
 _token_file = os.path.join(_cache_dir, 'tokens.json')
-
 
 class InnerTube:
     """Object for interacting with the innertube API."""

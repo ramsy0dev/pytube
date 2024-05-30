@@ -1,7 +1,6 @@
 """Unit tests for the :class:`StreamQuery <StreamQuery>` class."""
 import pytest
 
-
 @pytest.mark.parametrize(
     ("test_input", "expected"),
     [

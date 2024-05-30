@@ -1,15 +1,23 @@
-import gzip
+import os
 import io
 import json
-import os
-import pytest
+import gzip
+
 from unittest import mock
 
+import pytest
 from pytube import helpers
 from pytube.exceptions import RegexMatchError
-from pytube.helpers import cache, create_mock_html_json, deprecated, setup_logger
-from pytube.helpers import target_directory, uniqueify
-
+from pytube.helpers import (
+    cache,
+    create_mock_html_json,
+    deprecated,
+    setup_logger
+)
+from pytube.helpers import (
+    target_directory,
+    uniqueify
+)
 
 def test_regex_search_no_match():
     with pytest.raises(RegexMatchError):

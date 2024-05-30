@@ -1,6 +1,8 @@
 """Library specific exception definitions."""
-from typing import Pattern, Union
-
+from typing import (
+    Pattern,
+    Union
+)
 
 class PytubeError(Exception):
     """Base pytube exception that all others inherit.

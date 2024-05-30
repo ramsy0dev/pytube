@@ -1,20 +1,27 @@
 """Implements a simple wrapper around urlopen."""
-import http.client
+import re
 import json
 import logging
-import re
 import socket
-from functools import lru_cache
+import http.client
+
 from urllib import parse
 from urllib.error import URLError
-from urllib.request import Request, urlopen
+from urllib.request import (
+    Request,
+    urlopen
+)
 
-from pytube.exceptions import RegexMatchError, MaxRetriesExceeded
+from functools import lru_cache
+
+from pytube.exceptions import (
+    RegexMatchError,
+    MaxRetriesExceeded
+)
 from pytube.helpers import regex_search
 
 logger = logging.getLogger(__name__)
 default_range_size = 9437184  # 9MB
-
 
 def _execute_request(
     url,

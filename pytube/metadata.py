@@ -1,7 +1,11 @@
 """This module contains the YouTubeMetadata class."""
 import json
-from typing import Dict, List, Optional
 
+from typing import (
+    Dict,
+    List,
+    Optional
+)
 
 class YouTubeMetadata:
     def __init__(self, metadata: List):

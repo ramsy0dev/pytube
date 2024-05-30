@@ -1,15 +1,34 @@
 """Module to download a complete playlist from a youtube channel."""
 import json
 import logging
-from collections.abc import Sequence
-from datetime import date, datetime
-from typing import Dict, Iterable, List, Optional, Tuple, Union
 
-from pytube import extract, request, YouTube
-from pytube.helpers import cache, DeferredGeneratorList, install_proxy, uniqueify
+from collections.abc import Sequence
+from datetime import (
+    date,
+    datetime
+)
+from typing import (
+    Dict,
+    Iterable,
+    List,
+    Optional,
+    Tuple,
+    Union
+)
+
+from pytube import (
+    extract,
+    request,
+    YouTube
+)
+from pytube.helpers import (
+    cache,
+    DeferredGeneratorList,
+    install_proxy,
+    uniqueify
+)
 
 logger = logging.getLogger(__name__)
-
 
 class Playlist(Sequence):
     """Load a YouTube playlist with URL"""

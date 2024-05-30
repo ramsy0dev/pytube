@@ -1,5 +1,8 @@
-from typing import Any, Callable, Optional
-
+from typing import (
+    Any,
+    Callable,
+    Optional
+)
 
 class Monostate:
     def __init__(

@@ -2,13 +2,10 @@
 # Native python imports
 import logging
 
-# Local imports
 from pytube import YouTube
 from pytube.innertube import InnerTube
 
-
 logger = logging.getLogger(__name__)
-
 
 class Search:
     def __init__(self, query):

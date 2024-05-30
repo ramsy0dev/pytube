@@ -1,12 +1,12 @@
-import socket
 import os
+import socket
 import pytest
+
 from unittest import mock
 from urllib.error import URLError
 
 from pytube import request
 from pytube.exceptions import MaxRetriesExceeded
-
 
 @mock.patch("pytube.request.urlopen")
 def test_streaming(mock_urlopen):

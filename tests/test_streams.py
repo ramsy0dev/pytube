@@ -1,13 +1,16 @@
 import os
 import random
 import pytest
+
 from datetime import datetime
 from unittest import mock
-from unittest.mock import MagicMock, Mock
+from unittest.mock import (
+    MagicMock,
+    Mock
+)
 from urllib.error import HTTPError
 
 from pytube import request, Stream
-
 
 @mock.patch("pytube.streams.request")
 def test_stream_to_buffer(mock_request, cipher_signature):

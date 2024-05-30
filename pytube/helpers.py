@@ -1,18 +1,26 @@
 """Various helper functions implemented by pytube."""
-import functools
-import gzip
-import json
-import logging
 import os
 import re
+import json
+import gzip
+import functools
+import logging
 import warnings
-from typing import Any, Callable, Dict, List, Optional, TypeVar
+
 from urllib import request
+
+from typing import (
+    Any,
+    Callable,
+    Dict,
+    List,
+    Optional,
+    TypeVar
+)
 
 from pytube.exceptions import RegexMatchError
 
 logger = logging.getLogger(__name__)
-
 
 class DeferredGeneratorList:
     """A wrapper class for deferring list generation.

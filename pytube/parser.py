@@ -1,8 +1,8 @@
+import re
 import ast
 import json
-import re
-from pytube.exceptions import HTMLParseError
 
+from pytube.exceptions import HTMLParseError
 
 def parse_for_all_objects(html, preceding_regex):
     """Parses input html to find all matches for the input starting point.

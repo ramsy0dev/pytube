@@ -1,11 +1,10 @@
-from unittest import mock
-
 import pytest
+
+from unittest import mock
 
 import pytube
 from pytube import YouTube
 from pytube.exceptions import RegexMatchError
-
 
 @mock.patch("urllib.request.install_opener")
 def test_install_proxy(opener):
