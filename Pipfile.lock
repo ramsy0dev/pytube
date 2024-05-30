@@ -550,11 +550,12 @@
         },
         "flake8-print": {
             "hashes": [
-                "sha256:5afac374b7dc49aac2c36d04b5eb1d746d72e6f5df75a6ecaecd99e9f79c6516",
-                "sha256:6c0efce658513169f96d7a24cf136c434dc711eb00ebd0a985eb1120103fe584"
+                "sha256:76915a2a389cc1c0879636c219eb909c38501d3a43cc8dae542081c9ba48bdf9",
+                "sha256:84a1a6ea10d7056b804221ac5e62b1cee1aefc897ce16f2e5c42d3046068f5d8"
             ],
             "index": "pypi",
-            "version": "==4.0.0"
+            "markers": "python_version >= '3.7'",
+            "version": "==5.0.0"
         },
         "flake8-pytest": {
             "hashes": [
