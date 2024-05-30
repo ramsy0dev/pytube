@@ -2,13 +2,22 @@
 """Module for interacting with a user's youtube channel."""
 import json
 import logging
-from typing import Dict, List, Optional, Tuple
 
-from pytube import extract, Playlist, request
+from typing import (
+    Dict,
+    List,
+    Optional,
+    Tuple
+)
+
+from pytube import (
+    extract,
+    Playlist,
+    request
+)
 from pytube.helpers import uniqueify
 
 logger = logging.getLogger(__name__)
-
 
 class Channel(Playlist):
     def __init__(self, url: str, proxies: Optional[Dict[str, str]] = None):
@@ -20,9 +29,18 @@ class Channel(Playlist):
             (Optional) A dictionary of proxies to use for web requests.
         """
         super().__init__(url, proxies)
-
-        self.channel_url = url
         
+         # Removes paths that comes after the channel handle.
+        if "channel" not in url:
+            self.channel_url = '/'.join((url.split("/")[:4]))
+        else:
+            self.channel_url = '/'.join((url.split("/")[:5]))
+        
+        if "channel" in self.channel_url:
+            self.channel_uri = "/" + '/'.join(self.channel_url.split("/")[-2:])
+        else:
+            self.channel_uri = "/" + self.channel_url.split("/")[-1]
+
         self.videos_url = self.channel_url + '/videos'
         self.playlists_url = self.channel_url + '/playlists'
         self.community_url = self.channel_url + '/community'
