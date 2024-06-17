@@ -703,12 +703,12 @@ flake8-plugin-utils = ">=1.0,<2.0"
 
 [[package]]
 name = "flake8-logging-format"
-version = "0.9.0"
+version = "2024.24.12"
 description = ""
 optional = false
 python-versions = "*"
 files = [
-    {file = "flake8-logging-format-0.9.0.tar.gz", hash = "sha256:e830cc49091e4b8ab9ea3da69a3da074bd631ce9a7db300e5c89fb48ba4a6986"},
+    {file = "flake8_logging_format-2024.24.12-py3-none-any.whl", hash = "sha256:7d93c2107354b10a05b1a0d8ccd3a9bfb793aee108007765114c958a7541d674"},
 ]
 
 [package.extras]
@@ -1999,4 +1999,4 @@ test = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-it
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "b962d5fa535600caf20c8c6d655df8c6e7d2bd7fadc12b8800120fd99cfee2b2"
+content-hash = "1b18bfb2a651046b6df2be466d6f2e86345c133972da5c792fd05afe845bbf43"
