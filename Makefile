@@ -39,9 +39,6 @@ help:
 ci:
 	pip install poetry
 	poetry install
-	poetry run flake8
-	# pipenv run pytest --cov-report term-missing # --cov=humps
-	poetry run coverage run -m pytest
 
 clean: clean-build clean-pyc
 
